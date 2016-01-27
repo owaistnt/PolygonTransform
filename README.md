@@ -2,7 +2,7 @@
 Polygon Transform for Picasso
 
 
-This Transform sub class for Picasso Library for rendering Image. Use is like any other transform.
+This Transform sub class is for Picasso Library for rendering Image. Use is like any other transform.
 Constructor takes 3 argument.<br/><br/>
 <b>public PolygonTransform(int targetWidth, int sides, boolean rotate);</b>
 <br/><br/>1. Targetwidth: and maintains aspect ratio.
