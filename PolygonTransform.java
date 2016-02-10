@@ -83,9 +83,16 @@ public class PolygonTransform implements Transformation {
     @Override
     public Bitmap transform(Bitmap source) {
 
-        int targetWidth = this.targetWidth;
-        double aspectRatio = (double) source.getHeight() / (double) source.getWidth();
+       int targetWidth = this.targetWidth;
+        double aspectRatio = 0.0D;
+        if(source.getHeight()>source.getWidth() || source.getHeight()==source.getWidth()){
+            aspectRatio=(double) source.getHeight() / (double) source.getWidth();
+        }else{
+            aspectRatio=(double) source.getWidth() / (double) source.getHeight();
+        }
+        Log.i("POLYGON TRANSFORM", "aspect ratio=" + aspectRatio);
         int targetHeight = (int) (targetWidth * aspectRatio);
+        Log.i("POLYGON TRANSFORM", "width=" + targetWidth+" Height="+targetHeight);
         Bitmap sourceB = Bitmap.createScaledBitmap(source, targetWidth, targetHeight, false);
         if (sourceB != source) {
             // Same bitmap is returned if sizes are the same
